@@ -19,5 +19,11 @@ if [[ -z $MONITORS ]]; then echo "no MONITORS set"; help; exit 99; fi
 	for ITEM in ${MONITORS//,/ }
 	do
 	echo $ITEM
-	curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d "api_key=${API}&format=json&id=${ITEM}&status=${STATUS}" "https://api.uptimerobot.com/v2/editMonitor" && sleep 5
+
+	case $ITEM in
+		vpn) ITEMID=790103671;;
+		*) echo fail ;;
+	esac
+
+	curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d "api_key=${API}&format=json&id=${ITEMID}&status=${STATUS}" "https://api.uptimerobot.com/v2/editMonitor" && sleep 5
 	done
