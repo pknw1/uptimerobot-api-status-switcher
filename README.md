@@ -1,0 +1,3 @@
+# uptimerobot-api-status-switcher
+
+
