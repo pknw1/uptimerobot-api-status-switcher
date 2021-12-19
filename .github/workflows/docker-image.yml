@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag uptimerobot-api-status-switcher:$(date +%s)
+      run: docker build . --file Dockerfile --tag pknw1/uptimerobot-api-status-switcher:$(date +%s)
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
@@ -29,6 +29,6 @@ jobs:
           # Note: tags has to be all lower-case
         tags: |
           pknw1/uptimerobot-api-status-switcher:latest
-          pknw1/uptimerobot-api-status-switcher:$GITHUB_JOB
+          pknw1/uptimerobot-api-status-switcher:${{ github.job }}
         push: true
 
