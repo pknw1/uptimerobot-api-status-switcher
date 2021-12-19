@@ -29,6 +29,6 @@ jobs:
           # Note: tags has to be all lower-case
         tags: |
           pknw1/uptimerobot-api-status-switcher:latest
-          pknw1/uptimerobot-api-status-switcher:${{ github.ref }}
+          pknw1/uptimerobot-api-status-switcher:$GITHUB_JOB
         push: true
 
