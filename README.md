@@ -14,5 +14,5 @@ case $ACTION in
 esac
 echo $STATUS; exit
 
-docker run -e API=${UPTIMEROBOT_API} -e MONITORS=${MONITORS}  -e STATUS=${1} -it test
+docker run -e API=${UPTIMEROBOT_API} -e MONITORS=${MONITORS}  -e STATUS=${1} -it pknw1/uptimerobot-api-status-switcher
 ```
